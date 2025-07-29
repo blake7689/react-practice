@@ -1,0 +1,26 @@
+.imagePreview {
+  margin-top: 10px;
+  width: 400px;
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .imagePreview {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 440px) {
+  .fileInputBox {
+    width: 75%;
+  }
+}
+
+@media (max-width: 331px) {
+  .addHouseButton {
+    margin-top: 10px;
+  }
+}
