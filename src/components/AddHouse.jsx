@@ -1,6 +1,8 @@
 import { useState, useTransition } from "react";
 import styles from "./AddHouse.module.css";
 
+// AddHouse component to allow users to add a new house
+// It uses the useTransition hook to manage the state of adding a house
 const AddHouse = ( { addHouse } ) => {
     const [isPending, startTransition] = useTransition();
 
@@ -14,6 +16,10 @@ const AddHouse = ( { addHouse } ) => {
 
     const [newHouse, setNewHouse] = useState(emptyHouse);
 
+    // Function to handle the submission of a new house
+    // It uses the addHouse function passed as a prop to add the new house
+    // The photo is processed to remove the file reference after submission
+    // This ensures that the component can reset the form after adding a house
     const onHouseSubmitClick = () => { 
         startTransition(async() => { 
             await addHouse({

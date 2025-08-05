@@ -1,6 +1,8 @@
 
 import currencyFormatter from "../helpers/currencyFormatter";
 
+// BidList component to display a list of bids for a specific house
+// It receives bids as a prop and renders them in a table format.
 const BidList = ({ bids }) => {
   return (
       <div className="row mt-4">

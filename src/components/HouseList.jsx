@@ -5,9 +5,13 @@ import HouseRow from "./HouseRow";
 import LoadingIndicator from "./LoadingIndicator";
 import AddHouse from "./AddHouse";
 
+// HouseList component to display a list of houses
+// It uses the useHouses custom hook to fetch and manage houses data.
 const HouseList = () => {
   const { houses, loadingState, addHouse } = useHouses();
 
+  // If the loading state is not loaded, display a loading indicator
+  // If there is an error, it will be handled by the ErrorBoundary component.
   if (loadingState !== loadingStatus.loaded)
     return <LoadingIndicator loadingState={loadingState} />
 

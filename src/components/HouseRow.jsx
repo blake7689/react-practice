@@ -1,6 +1,8 @@
 import currencyFormatter from "../helpers/currencyFormatter";
 import { useNavigate } from "react-router";
 
+// HouseRow component to display a single row of house data
+// It uses the useNavigate hook to navigate to the House component when clicked.
 const HouseRow = ({ house }) => {
   const navigate = useNavigate();
   return (

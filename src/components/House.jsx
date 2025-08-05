@@ -6,13 +6,23 @@ import useBids from "../hooks/useBids";
 import LoadingIndicator from "./LoadingIndicator";
 import AddBid from "./AddBid";
 
-
+// House component to display details of a specific house
+// It uses the useLocation hook to get the house data passed from the HouseList component.
 const House = () => {
+
+  // Get the current location and extract the house data from the state
+  // This allows the component to access the house details that were clicked on in the HouseList
   const location = useLocation();
+
+  // Destructure the house object from the location state
+  // This is the house that was selected from the list to view its details
   const { house } = location.state;
 
+// If the house data is not available, return null to avoid rendering errors
   const { bids, loadingState, addBid } = useBids(house.id);
 
+  // If the loading state is not loaded, display a loading indicator
+  // This ensures that the component waits for the bids data to be fetched before rendering
   if (loadingState !== loadingStatus.loaded)
         return <LoadingIndicator loadingState={loadingState} />;
 

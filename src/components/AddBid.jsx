@@ -1,5 +1,8 @@
 import { useState, useTransition } from "react";
 
+// AddBid component to allow users to add a new bid
+// It uses the useTransition hook to manage the state of adding a bid
+// It takes a house object and an addBid function as props
 const AddBid = ( {house, addBid} ) => {
     const [isPending, startTransition] = useTransition();
 
@@ -11,6 +14,10 @@ const AddBid = ( {house, addBid} ) => {
 
     const [newBid, setNewBid] = useState(emptyBid);
 
+    // Function to handle the submission of a new bid
+    // It uses the addBid function passed as a prop to add the new bid
+    // The new bid is reset to an empty state after submission
+    // This ensures that the component can reset the form after adding a bid
     const onBidSubmitClick = () => { 
         startTransition(async() => { 
             await addBid(newBid);   
